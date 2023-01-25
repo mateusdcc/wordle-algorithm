@@ -9,6 +9,7 @@ license = "MIT"
 readme = "README.md"
 keywords = ["wordle", "word", "guess", "algorithm"]
 categories = ["algorithms"]
+documentation = "https://docs.rs/wordle-algorithm"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
