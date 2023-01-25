@@ -1,4 +1,3 @@
-```
-Simple Wordle word checking algorithm, made for educational purposes.
-Documentation: https://docs.rs/wordle-algorithm
-```
+# Wordle Algorithm
+
+Wordle is a simple word guessing game, this repository has an algorithm that provides the logic for the game.
