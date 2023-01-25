@@ -2,7 +2,7 @@
 //! this crate provides the logic for the game.
 
 #[derive(Debug, Copy, Clone)]
-/// PartResult is a struct that holds the result of a guess
+/// `PartResult` is a struct that holds the result of a guess
 /// for a single letter
 pub struct PartResult {
     letter: char,
@@ -31,7 +31,7 @@ impl PartResult {
 }
 
 #[derive(Debug)]
-/// GuessResult is a struct that holds the result of a guess
+/// `GuessResult` is a struct that holds the result of a guess
 /// for the entire word
 pub struct GuessResult {
     word: String,
@@ -46,7 +46,7 @@ impl GuessResult {
     }
 
     #[must_use]
-    /// Returns a vector of PartResult
+    /// Returns a vector of `PartResult`
     pub fn parts(&self) -> &Vec<PartResult> {
         &self.parts
     }
