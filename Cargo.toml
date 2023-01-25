@@ -2,6 +2,13 @@
 name = "wordle"
 version = "0.1.0"
 edition = "2021"
+authors = ["Mateus Cavalcanti<mateusdc@proton.me>"]
+description = "A algorithm to check Wordle's word guess"
+repository = "https://github.com/mateusdc/wordle-algorithm"
+license = "MIT"
+readme = "README.md"
+keywords = ["wordle", "word", "guess", "algorithm"]
+categories = ["algorithms"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
