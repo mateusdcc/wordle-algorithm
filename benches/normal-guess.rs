@@ -2,7 +2,7 @@
 extern crate test;
 
 use test::Bencher;
-use wordle::Wordle;
+use wordlea::Wordle;
 
 #[bench]
 fn bench_word_guess(b: &mut Bencher) {

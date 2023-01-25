@@ -1,4 +1,4 @@
-use wordle::Wordle;
+use wordlea::Wordle;
 
 #[cfg(test)]
 mod tests {

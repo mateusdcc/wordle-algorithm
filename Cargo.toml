@@ -1,5 +1,5 @@
 [package]
-name = "wordle"
+name = "wordlea"
 version = "0.1.0"
 edition = "2021"
 authors = ["Mateus Cavalcanti<mateusdc@proton.me>"]
