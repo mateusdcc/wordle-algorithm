@@ -1,10 +1,10 @@
 [package]
 name = "wordlea"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Mateus Cavalcanti<mateusdc@proton.me>"]
 description = "A algorithm to check Wordle's word guess"
-repository = "https://github.com/mateusdc/wordle-algorithm"
+repository = "https://github.com/mateusdcc/wordle-algorithm"
 license = "MIT"
 readme = "README.md"
 keywords = ["wordle", "word", "guess", "algorithm"]
