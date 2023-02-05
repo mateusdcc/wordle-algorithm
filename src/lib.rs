@@ -85,11 +85,21 @@ impl Wordle<'_> {
         );
 
         let mut results = Vec::new();
+        let mut word_clone = self.word.clone().to_string();
 
         for c in guess.char_indices() {
             let letter = c.1;
-            let in_word = self.word.contains(letter);
+            let in_word = word_clone.contains(letter);
             let in_position = self.word.chars().nth(c.0) == Some(letter);
+
+            if in_word {
+                for (i, c) in word_clone.char_indices() {
+                    if c == letter {
+                        word_clone.replace_range(i..i + 1, "_");
+                        break;
+                    }
+                }
+            }
 
             results.push(PartResult {
                 letter,

@@ -14,18 +14,34 @@ mod tests {
     #[test]
     fn test_word_guess_repeated_letters() {
         let mut word = Wordle::new("hello");
-        let guess = "hhhhh";
+        let guess = "ehhll";
         let result = word.guess(guess);
+
+        println!("{:#?}", result);
 
         assert_eq!(result.parts().len(), word.length());
         let part = result.parts().get(0).unwrap();
+        assert_eq!(part.letter(), 'e');
+        assert_eq!(part.in_word(), true);
+        assert_eq!(part.in_position(), false);
+
+        let part = result.parts().get(1).unwrap();
         assert_eq!(part.letter(), 'h');
+        assert_eq!(part.in_word(), true);
+        assert_eq!(part.in_position(), false);
+
+        let part = result.parts().get(2).unwrap();
+        assert_eq!(part.letter(), 'h');
+        assert_eq!(part.in_word(), false);
+        assert_eq!(part.in_position(), false);
+
+        let part = result.parts().get(3).unwrap();
+        assert_eq!(part.letter(), 'l');
         assert_eq!(part.in_word(), true);
         assert_eq!(part.in_position(), true);
 
-        assert_eq!(result.parts().len(), word.length());
-        let part = result.parts().get(1).unwrap();
-        assert_eq!(part.letter(), 'h');
+        let part = result.parts().get(4).unwrap();
+        assert_eq!(part.letter(), 'l');
         assert_eq!(part.in_word(), true);
         assert_eq!(part.in_position(), false);
     }
