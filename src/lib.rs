@@ -86,30 +86,17 @@ impl Wordle<'_> {
 
         let mut results = Vec::new();
 
-        for c in guess.chars() {
-            let mut part;
-            if self.word.contains(c) {
-                part = PartResult {
-                    letter: c,
-                    in_word: true,
-                    in_position: false,
-                };
+        for c in guess.char_indices() {
+            let letter = c.1;
+            let in_word = self.word.contains(letter);
+            let in_position = self.word.chars().nth(c.0) == Some(letter);
 
-                if self.word.find(c) == guess.find(c) {
-                    part.in_position = true;
-                }
-            } else {
-                part = PartResult {
-                    letter: c,
-                    in_word: false,
-                    in_position: false,
-                }
-            }
-
-            results.push(part);
+            results.push(PartResult {
+                letter,
+                in_word,
+                in_position,
+            });
         }
-
-        self.count += 1;
 
         GuessResult {
             word: guess.to_string(),

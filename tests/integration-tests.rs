@@ -11,6 +11,24 @@ mod tests {
         assert_eq!(word.count(), 0);
         assert_eq!(word.won(), false);
     }
+    #[test]
+    fn test_word_guess_repeated_letters() {
+        let mut word = Wordle::new("hello");
+        let guess = "hhhhh";
+        let result = word.guess(guess);
+
+        assert_eq!(result.parts().len(), word.length());
+        let part = result.parts().get(0).unwrap();
+        assert_eq!(part.letter(), 'h');
+        assert_eq!(part.in_word(), true);
+        assert_eq!(part.in_position(), true);
+
+        assert_eq!(result.parts().len(), word.length());
+        let part = result.parts().get(1).unwrap();
+        assert_eq!(part.letter(), 'h');
+        assert_eq!(part.in_word(), true);
+        assert_eq!(part.in_position(), false);
+    }
 
     #[test]
     fn test_word_guess_one_letter() {

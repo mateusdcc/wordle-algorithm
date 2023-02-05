@@ -1,6 +1,6 @@
 [package]
 name = "wordlea"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 authors = ["Mateus Cavalcanti<mateusdc@proton.me>"]
 description = "A algorithm to check Wordle's word guess"
