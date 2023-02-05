@@ -84,35 +84,18 @@ impl Wordle<'_> {
             "Guess must be the same length as the word"
         );
 
-        let mut guess_sym: Vec<(usize, char)> = guess.char_indices().collect();
-        let filtered_list = guess
-            .char_indices()
-            .map(|c| {
-                let mut found = false;
-                for (i, g) in guess_sym.clone().iter().enumerate() {
-                    if g.1 == c.1 {
-                        guess_sym.remove(i);
-                        found = true;
-                    } else {
-                        found = false;
-                    }
-                }
-                (c.0, c.1, found)
-            })
-            .collect::<Vec<(usize, char, bool)>>();
-
         let mut results = Vec::new();
 
-        for (i, c, b) in filtered_list {
+        for c in guess.chars() {
             let mut part;
-            if b {
+            if self.word.contains(c) {
                 part = PartResult {
                     letter: c,
                     in_word: true,
                     in_position: false,
                 };
 
-                if guess.char_indices().nth(i).unwrap().1 == c {
+                if self.word.find(c) == guess.find(c) {
                     part.in_position = true;
                 }
             } else {
